@@ -1,0 +1,30 @@
+<tui-input-files
+    accept="image/*"
+    (reject)="onReject($event)"
+    (filesChange)="onFilesChange($event)"
+    [multiple]="false"
+></tui-input-files>
+
+<tui-files class="tui-space_top-1">
+    <tui-file
+        *ngIf="loadedFiles$ | async as file"
+        [file]="file"
+        [showDelete]="true"
+        (removed)="removeFile()"
+    ></tui-file>
+
+    <tui-file
+        *ngIf="rejectedFiles$ | async as file"
+        state="error"
+        [file]="file"
+        [showDelete]="true"
+        (removed)="clearRejected()"
+    ></tui-file>
+
+    <tui-file
+        *ngIf="loadingFiles$ | async as file"
+        state="loading"
+        [file]="file"
+        [showDelete]="false"
+    ></tui-file>
+</tui-files>
