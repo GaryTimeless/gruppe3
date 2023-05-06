@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gruppe3hka": {
+      "hosting": {
+        "gruppe3": [
+          "gruppe3hka"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gruppe3hka"
+  }
+}
